@@ -14,18 +14,6 @@ from groq import Groq
 from semantic_router import Route
 from semantic_router.layer import RouteLayer
 
-# ... [The rest of your app.py code stays exactly the same below this] ...
-__import__('pysqlite3')
-import sys
-sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
-import streamlit as st
-import sqlite3
-import chromadb
-from groq import Groq
-from semantic_router import Route
-from semantic_router.layer import RouteLayer
-from semantic_router.encoders import HuggingFaceEncoder
-
 # ==========================================
 # 1. SETUP & CONFIGURATION
 # ==========================================
