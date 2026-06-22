@@ -1,0 +1,5 @@
+streamlit
+chromadb
+semantic-router
+groq
+python-dotenv
