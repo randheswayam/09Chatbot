@@ -1,3 +1,20 @@
+import os
+# Force Protobuf to use the pure-Python implementation to avoid descriptor errors
+os.environ["PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION"] = "python"
+
+# SQLite fix for Streamlit Cloud
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
+import streamlit as st
+import sqlite3
+import chromadb
+from groq import Groq
+from semantic_router import Route
+from semantic_router.layer import RouteLayer
+
+# ... [The rest of your app.py code stays exactly the same below this] ...
 __import__('pysqlite3')
 import sys
 sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
